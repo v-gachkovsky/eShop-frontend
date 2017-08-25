@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { removeFromCart } from '../actions';
+
 class Cart extends Component {
   render () {
     let totalPrice = 0;
@@ -31,7 +33,7 @@ export default connect(
 
   dispatch => ({
     onRemoveFromCart: index => {
-      dispatch({ type: 'REMOVE_FROM_CART', payload: index });
+      dispatch(removeFromCart(index));
     }
   })
 )(Cart);

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { addToCart } from '../actions';
+
 class Showcase extends Component {
   render () {
     let showcase = this.props.store.showcase.map((item, index) => {
@@ -28,7 +30,7 @@ export default connect(
   }),
   dispatch => ({
     onAddToCart: item => {
-      dispatch({ type: 'ADD_TO_CART', payload: item });
+      dispatch(addToCart(item));
     }
   })
 )(Showcase);
