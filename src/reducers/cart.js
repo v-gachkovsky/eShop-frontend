@@ -7,9 +7,10 @@ const cart = (state = [], action) => {
         action.payload
       ];
     case 'REMOVE_FROM_CART':
-      state.splice(action.payload, 1);
+      let newState = [...state];
+      newState.splice(action.payload, 1);
       return [
-        ...state
+        ...newState
       ];
     default:
       return state;
