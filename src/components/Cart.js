@@ -6,7 +6,7 @@ import { removeFromCart } from '../actions';
 class Cart extends Component {
   render () {
     let totalPrice = 0;
-    let orders = this.props.store.cart.map((item, index) => {
+    let orders = this.props.cart.map((item, index) => {
       totalPrice += item.Price;
       return <li key={index}>
         {item.Name} - ${item.Price}
@@ -28,7 +28,7 @@ class Cart extends Component {
 
 export default connect(
   state => ({
-    store: state
+    cart: state.cart
   }),
 
   dispatch => ({

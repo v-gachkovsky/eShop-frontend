@@ -5,7 +5,7 @@ import { addToCart } from '../actions';
 
 class Showcase extends Component {
   render () {
-    let showcase = this.props.store.showcase.map((item, index) => {
+    let showcase = this.props.showcase.map((item, index) => {
       return <li key={index}>
         {item.Name} - ${item.Price}
         &nbsp;
@@ -26,7 +26,7 @@ class Showcase extends Component {
 
 export default connect(
   state => ({
-    store: state
+    showcase: state.showcase
   }),
   dispatch => ({
     onAddToCart: item => {
